@@ -1,0 +1,41 @@
+{
+  "name": "@discord-additions/components",
+  "version": "1.0.0",
+  "description": "Some helpful additions to make creating components easier.",
+  "main": "build/index.js",
+  "scripts": {
+    "prepublishOnly": "rm -rf build && tsc && npm run fix-js && echo finished",
+    "fix-js": "sed -i '/__exportStar(require(\".\\/util\\/types\"), exports);/d' build/index.js && cp src/util/types.d.ts build/util",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiscordAdditions/Components.git"
+  },
+  "keywords": [
+    "eris",
+    "discord.js",
+    "components",
+    "additions",
+    "discord",
+    "discord-additions"
+  ],
+  "author": "Donovan Daniels <hewwo@yiff.rocks>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiscordAdditions/Components/issues"
+  },
+  "homepage": "https://github.com/DiscordAdditions/Components#readme",
+  "dependencies": {
+    "discord-api-types": "^0.27.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@uwu-codes/eslint-config": "^1.0.31",
+    "@uwu-codes/tsconfig": "^1.0.1",
+    "eris": "^0.16.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
