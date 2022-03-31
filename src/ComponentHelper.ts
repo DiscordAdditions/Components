@@ -30,7 +30,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * Star a new action row
 	 *
 	 * @param {Array<ValidComponents>} [components=[]] - the components to start this new row with
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	addRow(components: Array<ValidComponents> = []) {
 		this.currentIndex++;
@@ -42,7 +42,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * Add a component to the current row, or a new row depending on certain conditions
 	 *
 	 * @param {ValidComponents} component - the component to add
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	addComponent(component: ValidComponents) {
 		const cur = this.getCurrentRow();
@@ -67,7 +67,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * bulk add several components
 	 *
 	 * @param {Array<ValidComponents>} components - the components to add
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	addComponents(...components: Array<ValidComponents>) {
 		components.map(c => this.addComponent(c));
@@ -82,7 +82,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * @param {string} [label] - text that appears on the button, max 80 characters
 	 * @param {PartialEmoji} [emoji] - an emoji that appears on the button
 	 * @param {boolean} [disabled] - whether the button is disabled
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	addInteractionButton(style: InteractionButtonStyle, customID: string, label?: string, emoji?: PartialEmoji, disabled?: boolean) {
 		this.addComponent(new Button(style, customID).load(style, customID, label, emoji, disabled));
@@ -96,7 +96,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * @param {string} label - 	text that appears on the button, max 80 characters
 	 * @param {PartialEmoji} [emoji] - an emoji that appears on the button
 	 * @param {boolean} [disabled] - whether the button is disabled
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	addURLButton(url: string, label?: string, emoji?: PartialEmoji, disabled?: boolean) {
 		this.addComponent(new Button(ButtonStyles.LINK, url).load(ButtonStyles.LINK, url, label, emoji, disabled));
@@ -114,7 +114,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * @param {number} [minValues] - the minimum number of items that must be chosen; default 1, min 0, max 25
 	 * @param {number} [maxValues] - the maximum number of items that can be chosen; default 1, max 25
 	 * @param {boolean} [disabled] - disable the select, default false
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	addSelectMenu(customID: string, options: Array<SelectMenuOption>, placeholder?: string, minValues?: number, maxValues?: number, disabled?: boolean) {
 		this.addComponent(new SelectMenu(customID).load(customID, options, placeholder, minValues, maxValues, disabled));
@@ -142,7 +142,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	/**
 	 * remove all of the rows that are empty
 	 *
-	 * @returns {ComponentHelper}
+	 * @returns {this}
 	 */
 	removeEmptyRows() {
 		this.rows.forEach((row, index) => {
