@@ -96,11 +96,11 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	 * @param {string} label - 	text that appears on the button, max 80 characters
 	 * @param {PartialEmoji} [emoji] - an emoji that appears on the button
 	 * @param {boolean} [disabled] - whether the button is disabled
-	 * @returns
+	 * @returns {ComponentHelper}
 	 */
 	addURLButton(url: string, label?: string, emoji?: PartialEmoji, disabled?: boolean) {
 		this.addComponent(new Button(ButtonStyles.LINK, url).load(ButtonStyles.LINK, url, label, emoji, disabled));
-		return true;
+		return this;
 	}
 
 	get addLinkButton() { return this.addURLButton.bind(this); }
