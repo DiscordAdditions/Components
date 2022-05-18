@@ -154,7 +154,7 @@ export default class ComponentHelper<T extends MessageActionRow | ModalActionRow
 	}
 
 	/** convert the current contents to JSON */
-	toJSON<J extends MessageActionRow | ModalActionRow = T>() { return this.removeEmptyRows().rows.map(row => row.toJSON()) as Array<J>; }
+	toJSON() { return this.removeEmptyRows().rows.map(row => row.toJSON()) as Array<T>; }
 
 	/**
 	 * Convert an emoji to a partial
