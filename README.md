@@ -3,8 +3,10 @@ Some helpful additions to make creating components easier.
 
 Get started by using our main class, the `ComponentHelper`.
 ```ts
+// you must import/require via { ComponentHelper }, we don't have a default export because it just doesn't work
 // const { ComponentHelper, (...) } = require("@discord-additions/components");
-import ComponentHelper, {
+import {
+	ComponentHelper,
 	ButtonStyles,
 	ButtonColors,
 	TextInputStyles,

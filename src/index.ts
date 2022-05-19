@@ -6,7 +6,6 @@ import TextInput from "./Structures/TextInput";
 import * as Constants from "./util/Constants";
 import ComponentHelper from "./ComponentHelper";
 
-export default ComponentHelper;
 export * from "./util/Constants";
 export * from "./util/types";
 export {

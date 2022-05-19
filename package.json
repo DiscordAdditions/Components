@@ -1,6 +1,6 @@
 {
   "name": "@discord-additions/components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Some helpful additions to make creating components easier.",
   "main": "build/index.js",
   "scripts": {
