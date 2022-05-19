@@ -12,7 +12,7 @@ type ValidComponents = Button | SelectMenu | TextInput;
 export default class ComponentHelper<T extends MessageActionRow | ModalActionRow = MessageActionRow | ModalActionRow> {
 	rowMax: RowMax = 5;
 	private rows: Array<ActionRow> = [];
-	private currentIndex = -1;
+	private currentIndex = 0;
 	constructor(rowMax?: RowMax) {
 		if (rowMax) this.rowMax = rowMax;
 	}
