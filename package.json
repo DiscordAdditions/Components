@@ -1,16 +1,13 @@
 {
   "name": "@discord-additions/components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Some helpful additions to make creating components easier.",
-  "main": "build/cjs/index.js",
-  "module": "build/esm/index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "rm -rf build && npm run build:cjs && npm run build:esm && echo Build Finished",
-    "build:cjs": "rm -rf build/cjs && tsc -p tsconfig.json && npm run fix-cjs && echo CJS Built",
-    "build:esm": "rm -rf build/esm && tsc -p esm.tsconfig.json && npm run fix-esm && echo ESM Built",
-    "fix-cjs": "sed -i '/__exportStar(require(\".\\/util\\/types\"), exports);/d' build/cjs/index.js && cp src/util/types.d.ts build/cjs/util",
-    "fix-esm": "sed -i '/export \\* from \".\\/util\\/types\";/d' build/esm/index.js && cp src/util/types.d.ts build/esm/util",
+    "build": "rm -rf build && tsc && npm run fix-js && echo Build Finished",
+    "fix-js": "sed -i '/__exportStar(require(\".\\/util\\/types\"), exports);/d' build/index.js && cp src/util/types.d.ts build/util",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
