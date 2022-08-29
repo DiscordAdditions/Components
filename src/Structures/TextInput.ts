@@ -136,11 +136,11 @@ export default class TextInput extends Component<typeof ComponentTypes["TEXT_INP
 	override toJSON(): ITextInput {
 		return {
 			type:        this.type,
-			custom_id:   this.customID,
+			customID:   this.customID,
 			style:       this.style,
 			label:       this.label,
-			min_length:  this.minLength,
-			max_length:  this.maxLength,
+			minLength:  this.minLength,
+			maxLength:  this.maxLength,
 			required:    this.required,
 			value:       this.value,
 			placeholder: this.placeholder

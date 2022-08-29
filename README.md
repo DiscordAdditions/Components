@@ -1,6 +1,8 @@
 ## Discord Additions - Components
 Some helpful additions to make creating components easier.
 
+Versions `1.0.7` and beyond have been changed to be compatible with [Oceanic](https://github.com/OceanicJS/Oceanic) instead of Eris. If you're using this module with eris, do not update.
+
 Get started by using our main class, the `ComponentHelper`.
 ```ts
 // const { ComponentHelper, (...) } = require("@discord-additions/components");

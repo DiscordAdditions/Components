@@ -125,11 +125,11 @@ export default class SelectMenu extends Component<typeof ComponentTypes["SELECT_
 	override toJSON(): ISelectMenu {
 		return {
 			type:        this.type,
-			custom_id:   this.customID,
+			customID:    this.customID,
 			options:     this.options,
 			placeholder: this.placeholder,
-			min_values:  this.minValues,
-			max_values:  this.maxValues,
+			minValues:   this.minValues,
+			maxValues:   this.maxValues,
 			disabled:    this.disabled
 		};
 	}

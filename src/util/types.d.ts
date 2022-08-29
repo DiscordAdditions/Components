@@ -18,7 +18,7 @@ export interface ButtonBase {
 }
 
 export interface InteractionButton extends ButtonBase {
-	custom_id: string;
+	customID: string;
 	style: InteractionButtonStyle;
 }
 
@@ -34,10 +34,10 @@ export interface PartialEmoji {
 }
 
 export interface SelectMenu {
-	custom_id: string;
+	customID: string;
 	disabled?: boolean;
-	max_values?: number;
-	min_values?: number;
+	maxValues?: number;
+	minValues?: number;
 	options: Array<SelectMenuOption>;
 	placeholder?: string;
 	type: typeof ComponentTypes["SELECT_MENU"];
@@ -59,11 +59,11 @@ export interface SelectMenuOption {
 
 export interface TextInput {
 	type: typeof ComponentTypes["TEXT_INPUT"];
-	custom_id: string;
+	customID: string;
 	style: TextInputStyle;
 	label: string;
-	min_length?: number;
-	max_length?: number;
+	minLength?: number;
+	maxLength?: number;
 	required?: boolean;
 	value?: string;
 	placeholder?: string;

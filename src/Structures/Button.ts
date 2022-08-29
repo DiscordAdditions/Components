@@ -118,7 +118,7 @@ export default class Button extends Component<typeof ComponentTypes["BUTTON"]> {
 			(obj as URLButton).url = this.url!;
 			return obj;
 		} else {
-			(obj as InteractionButton).custom_id = this.customID!;
+			(obj as InteractionButton).customID = this.customID!;
 			return obj;
 		}
 
